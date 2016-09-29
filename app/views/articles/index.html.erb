@@ -18,7 +18,7 @@
             </div>
             <div class="card-footer" style="margin-left:-1.25rem;margin-right:-1.25rem;margin-bottom:-1.25rem;background:white">
               <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default pull-lg-right pull-right' %>
-              <%= link_to 'Remove', article, class: 'btn btn-danger pull-lg-right pull-right', method: :delete, data: {confirm: "Remove this article?"} %>
+              <%= link_to 'Destroy', article, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
         </div>
