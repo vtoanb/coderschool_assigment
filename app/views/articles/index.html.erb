@@ -1,22 +1,28 @@
+
 <nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="/">Toan's blog</a>
-  <ul class="nav navbar-nav">
-      <li class="nav-item active"> 
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <a class="navbar-brand" href="#">Toan's blog</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
       </li>
       <li class="nav-item">
         <%= link_to 'New Article', new_article_path, class: "nav-link" %>
-      </li>   
-  </ul>
-  <%= form_tag(@articles_path, :method => "get", id: "search-form", class: "form-inline pull-xs-right") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search articles", class: "form-control" %>
-    <%= submit_tag "Search" , class: "btn btn-outline-success"%>
-  <% end %>
-
+      </li> 
+      <li>
+      <%= form_tag(@articles_path, :method => "get", id: "search-form", class: "form-inline pull-lg-right pull-md-right pull-sm-right pull-xs-left") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search articles", class: "form-control" %>
+        <%= submit_tag "Search" , class: "btn btn-outline-success"%>
+      <% end %>
+      </li>
+    </ul>
+  </div>
 </nav>
+
+
 <div class="container">
   <p id="notice"><%= notice %></p>
   <br>
