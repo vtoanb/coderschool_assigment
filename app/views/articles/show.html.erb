@@ -3,7 +3,7 @@
 	<%= render @article %> 
     
     <br>
-	<h3> Guest comments</h3>
+	<h3> <%= "Has #{@article.comments.count} comments posted" %></h3>
     
     <!-- showing article comment -->
 	<ul class="list-group" style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px">
