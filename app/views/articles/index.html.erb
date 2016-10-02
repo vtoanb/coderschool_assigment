@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-sm-8 col-xs-12">
       <% @articles.each do |article| %>
-        <div class="card">
+        <!--div class="card">
           <div class="card-block">
             <div class="card-title">
               <h3><%= article.title %></h3>
@@ -21,14 +21,20 @@
               <%= link_to 'Destroy', article, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
-        </div>
+       </div-->
+       <%= render @articles %>
       <% end %>      
 
   <br>
   <%= link_to 'New Article', new_article_path %>
     </div>
 
-
-
+  <%= form_tag(@articles_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search articles" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+  <% if @articles.present? %>
+      <% render @articles %>
+  <% end %>
 
 </div>
