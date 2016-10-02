@@ -8,7 +8,8 @@
   <div class="col-sm-8 col-xs-12">
     <% @articles.each do |article| %>        
      <%= render article %>
-    <% end %>      
+    <% end %>
+          
     <% if @articles.present? %>
       <% render @articles %>
     <% else %>

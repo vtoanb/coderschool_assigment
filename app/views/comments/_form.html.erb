@@ -1,0 +1,17 @@
+<%= form_for([@article,@article.comments.build]) do |f| %>
+  <div class="form-group row">
+
+    <div class="col-sm-offset-2 col-sm-5">
+      <%= f.text_field :content, class: "form-control"%>  	
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-5">
+      <div class="button-group" role="group">
+      <%= f.submit 'Comment', :class => 'btn btn-primary' %>
+  	  <%= link_to 'Back', articles_path, class: 'btn btn-default' %>
+  	  </div>
+
+    </div>
+  </div>
+
+<% end %>

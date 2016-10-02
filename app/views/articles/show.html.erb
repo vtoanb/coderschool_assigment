@@ -1,15 +1,18 @@
-<div class="col-sm-10 col-md-7 col-lg-5">
+<div class="col-sm-8 col-xs-12">
 
-	<p>
-	  <strong>Title:</strong>
-	  <%= @article.title %>
-	</p>
+	<%= render @article %> 
+    
+    <br>
+	<h3> Guest comments</h3>
+    
+    <!-- showing article comment -->
+	<ul class="list-group" style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px">
+	  <% @article.comments.each do |comment| %>
+	  <%= render comment %>
+	  <% end %>
+	</ul>
 
-	<p>
-	  <strong>Body:</strong>
-	  <%= @article.body %>
-	</p>
+	<!-- Adding comments -->
+	<%= render 'comments/form' %>
 
-	<%= link_to 'Edit', edit_article_path(@article) %> |
-	<%= link_to 'Back', articles_path %>
 </div>
