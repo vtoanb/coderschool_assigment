@@ -10,16 +10,19 @@
       </ul>
     </div>
   <% end %>
+  <div class="field form-group">
+    <%= f.label :title, class: "control-label" %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :body ,class: "control-label"%><br>
+    <%= f.text_area :body, class: "form-control", rows: "12" %>
+  </div>
+  <div class="actions form-group">
+      <%= f.submit "Submit", class: "btn btn-success" %>
+    </div>
+    <!--div class="form-group">
+      <%= link_to 'Back', articles_path, class: "btn btn-warning" %>
+    </div-->
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
