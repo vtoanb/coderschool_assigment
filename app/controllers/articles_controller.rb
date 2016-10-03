@@ -6,11 +6,19 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    if params[:search]
-        @articles = Article.search(params[:search]).order("created_at DESC")
-    else
-        @articles = Article.all.order('created_at DESC')
-    end
+
+    # This code to show below code better
+    # if params[:search]
+    #     @articles = Article.search(params[:search]).order("created_at DESC")
+    # else
+    #     @articles = Article.all.order('created_at DESC')
+    # end
+
+    @articles = if params[:search]
+                  Article.search(params[:search]).order("created_at DESC")
+                else
+                  Article.all.order('created_at DESC')
+                end
   end
 
   # GET /articles/1
@@ -69,13 +77,14 @@ class ArticlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
 end
