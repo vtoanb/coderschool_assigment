@@ -24,10 +24,13 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    # Update view variable
-    @article_show = Article.find(params[:id])
-    @article_show.increment!(:view)
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @article_show = Article.find(params[:id])
+
+    if params[:read] == "true"
+      # Update view variable
+      @article_show.increment!(:view)
+    end
   end
 
   # GET /articles/new

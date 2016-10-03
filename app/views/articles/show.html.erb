@@ -11,9 +11,9 @@
 	    <div class="card-footer" style="margin-left:-1.25rem;margin-right:-1.25rem;margin-bottom:-1.25rem;background:white">
 	    <div class="btn-group-justified">
 	      <!-- not showing when in root -->
-	      <%= link_to 'Remove', @article_show, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %>
-	      <%= link_to 'Edit', edit_article_path(@article_show), class: 'btn btn-default' %>
-	      <button class="btn btn-default pull-lg-right"><%= "#{@article_show.view} views" %></button>
+	      <%= link_to 'Remove', @article_show, class: 'btn btn-danger pull-lg-right',method: :delete, data: { confirm: 'Are you sure?' } %>
+	      <%= link_to 'Edit', edit_article_path(@article_show), class: 'btn btn-default pull-lg-right' %>
+	      <%= "#{@article_show.view} views" %>
 	      </div>
 	    </div>
 	  </div>
