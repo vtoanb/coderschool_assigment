@@ -8,10 +8,11 @@
     </div>
     <div class="card-footer" style="margin-left:-1.25rem;margin-right:-1.25rem;margin-bottom:-1.25rem;background:white">
     <div class="btn-group-justified">
-      
-      <%= link_to 'Remove', article, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default' %>
-      <%= link_to 'Comment', article, class: 'btn btn-default' %>
+      <!-- not showing when in root -->
+      <!--%= link_to 'Remove', article, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %-->
+      <!--%= link_to 'Edit', edit_article_path(article), class: 'btn btn-default' %-->
+      <%= link_to 'Read', article, class: 'btn btn-default' %>
+      <button class="btn btn-default pull-lg-right"><%= "#{article.view} views" %></button>
       
       </div>
     </div>

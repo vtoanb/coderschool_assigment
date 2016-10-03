@@ -1,18 +1,35 @@
+<br>
 <div class="col-sm-8 col-xs-12">
+	<div class="card">
+	  <div class="card-block">
+	    <div class="card-title">
+	      <h3><%= @article.title %></h3>
+	    </div>
+	    <div class="card-body">
+	      <%= @markdown.render(@article_show.body).html_safe %>
+	    </div>
+	    <div class="card-footer" style="margin-left:-1.25rem;margin-right:-1.25rem;margin-bottom:-1.25rem;background:white">
+	    <div class="btn-group-justified">
+	      <!-- not showing when in root -->
+	      <%= link_to 'Remove', @article_show, class: 'btn btn-danger',method: :delete, data: { confirm: 'Are you sure?' } %>
+	      <%= link_to 'Edit', edit_article_path(@article_show), class: 'btn btn-default' %>
+	      <button class="btn btn-default pull-lg-right"><%= "#{@article_show.view} views" %></button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<br>
 
-	<%= render @article %> 
-    
-    <br>
-	<h3> <%= "Has #{@article.comments.count} comments posted" %></h3>
+	<h4> <%= "Has #{@article_show.comments.count} comments posted" %></h4>
     
     <!-- showing article comment -->
 	<ul class="list-group" style="padding-top: 20px; padding-left: 20px; padding-bottom: 20px">
-	  <% @article.comments.each do |comment| %>
+	  <% @article_show.comments.each do |comment| %>
 	  <%= render comment %>
 	  <% end %>
 	</ul>
 
+
 	<!-- Adding comments -->
 	<%= render 'comments/form' %>
-
 </div>
