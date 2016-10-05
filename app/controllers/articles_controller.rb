@@ -4,15 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-
-    # This code to show below code better
-    # if params[:search]
-    #     @articles = Article.search(params[:search]).order("created_at DESC")
-    # else
-    #     @articles = Article.all.order('created_at DESC')
-    # end
 
     @articles = if params[:search]
                   Article.search(params[:search]).order("created_at DESC")
