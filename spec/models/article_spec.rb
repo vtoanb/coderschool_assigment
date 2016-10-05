@@ -12,9 +12,10 @@ describe Article do
 		expect(FactoryGirl.create(:article)).to be_valid
 	end
 	it "is invalid without title" do
-		FactoryGirl.build(:article,title: nil).should_not be_valid
+		expect(FactoryGirl.build(:article,title: nil)).not_to be_valid
 	end
 	it "is invalid without body" do
-		FactoryGirl.build(:article,body: nil).should_not be_valid
+		expect(FactoryGirl.build(:article,body: nil)).not_to be_valid
 	end
 end
+
