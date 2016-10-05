@@ -9,8 +9,12 @@ require 'rails_helper'
 
 describe Article do
 	it "has a valid factory" do
-		Factory.create(:contact).should be_valid
+		expect(FactoryGirl.create(:article)).to be_valid
 	end
-	it "is invalid without title"
-	it "is invalid without body"
+	it "is invalid without title" do
+		FactoryGirl.build(:article,title: nil).should_not be_valid
+	end
+	it "is invalid without body" do
+		FactoryGirl.build(:article,body: nil).should_not be_valid
+	end
 end
