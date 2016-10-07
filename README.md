@@ -1,5 +1,7 @@
 # Pre-work - vutoanblog
 
+<a href="https://codeclimate.com/github/vtoanb/coderschool_assigment"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/vtoanb/coderschool_assigment/coverage"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/coverage.svg" /></a>
 
 vutoanblog is a Ruby on Rails blog application.
 
