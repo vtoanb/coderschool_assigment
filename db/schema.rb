@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003035334) do
-
+ActiveRecord::Schema.define(version: 20_161_003_035_334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161003035334) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["article_id", "created_at"], name: "index_comments_on_article_id_and_created_at", using: :btree
+  add_index "comments", %w[article_id created_at], name: "index_comments_on_article_id_and_created_at", using: :btree
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type"
@@ -49,8 +48,8 @@ ActiveRecord::Schema.define(version: 20161003035334) do
 
   add_index "commontator_comments", ["cached_votes_down"], name: "index_commontator_comments_on_cached_votes_down", using: :btree
   add_index "commontator_comments", ["cached_votes_up"], name: "index_commontator_comments_on_cached_votes_up", using: :btree
-  add_index "commontator_comments", ["creator_id", "creator_type", "thread_id"], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id", using: :btree
-  add_index "commontator_comments", ["thread_id", "created_at"], name: "index_commontator_comments_on_thread_id_and_created_at", using: :btree
+  add_index "commontator_comments", %w[creator_id creator_type thread_id], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id", using: :btree
+  add_index "commontator_comments", %w[thread_id created_at], name: "index_commontator_comments_on_thread_id_and_created_at", using: :btree
 
   create_table "commontator_subscriptions", force: :cascade do |t|
     t.string   "subscriber_type", null: false
@@ -60,7 +59,7 @@ ActiveRecord::Schema.define(version: 20161003035334) do
     t.datetime "updated_at"
   end
 
-  add_index "commontator_subscriptions", ["subscriber_id", "subscriber_type", "thread_id"], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true, using: :btree
+  add_index "commontator_subscriptions", %w[subscriber_id subscriber_type thread_id], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true, using: :btree
   add_index "commontator_subscriptions", ["thread_id"], name: "index_commontator_subscriptions_on_thread_id", using: :btree
 
   create_table "commontator_threads", force: :cascade do |t|
@@ -73,6 +72,5 @@ ActiveRecord::Schema.define(version: 20161003035334) do
     t.datetime "updated_at"
   end
 
-  add_index "commontator_threads", ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true, using: :btree
-
+  add_index "commontator_threads", %w[commontable_id commontable_type], name: "index_commontator_threads_on_c_id_and_c_type", unique: true, using: :btree
 end

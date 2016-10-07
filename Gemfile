@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.7.1'
 gem 'pg', '~> 0.15'
 gem 'sprockets', '3.6.3'
 gem 'sass-rails', '~> 5.0'
@@ -20,10 +20,10 @@ source 'https://rails-assets.org' do
 end
 
 group :development, :test do
-	  gem 'factory_girl_rails'
-      gem 'rspec-rails'
-      gem 'rubocop'
-      gem 'byebug'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'rubocop'
+  gem 'byebug'
 end
 
 group :test do
@@ -38,4 +38,3 @@ group :development do
   gem 'spring'
   gem 'guard-bundler'
 end
-
