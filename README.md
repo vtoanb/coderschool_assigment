@@ -2,6 +2,9 @@
 
 <a href="https://codeclimate.com/github/vtoanb/coderschool_assigment"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/vtoanb/coderschool_assigment/coverage"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/coverage.svg" /></a>
+https://circleci.com/gh/:vtoanb/:coderschool_assigment.svg?style=shield&circle-token=:circle-token
+
+
 
 vutoanblog is a Ruby on Rails blog application.
 
