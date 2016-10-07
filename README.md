@@ -2,7 +2,7 @@
 
 <a href="https://codeclimate.com/github/vtoanb/coderschool_assigment"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/vtoanb/coderschool_assigment/coverage"><img src="https://codeclimate.com/github/vtoanb/coderschool_assigment/badges/coverage.svg" /></a>
-https://circleci.com/gh/:vtoanb/:coderschool_assigment.svg?style=shield&circle-token=:circle-token
+[![CircleCI](https://circleci.com/gh/vtoanb/coderschool_assignment.svg?style=svg)](https://circleci.com/gh/vtoanb/coderschool_assigment)
 
 
 
